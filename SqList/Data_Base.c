@@ -63,18 +63,17 @@ BOOL ListEmpty(PSQLIST pL)
 	}
 }
 
-STATUS DeleteList(PSQLIST pL, size_t pos, int *pe)
+STATUS DeleteList(PSQLIST pL, size_t pos, int *e)
 {
 	size_t pL_length = ListLength(pL);
 	
 	/*判断删除的位置是否合理*/
 	if (pos<0 || pos>pL_length)
 	{
-		pe = NULL;
 		return FAILE;
 	}
 
-	*pe = pL->elem[pos-1];
+	*e = pL->elem[pos-1];
 
 	while (pos < pL_length)
 	{
