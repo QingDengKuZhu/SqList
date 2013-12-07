@@ -20,12 +20,12 @@ typedef enum Bool
 
 
 /*状态*/
-typedef enum Satues
+typedef enum Status
 {
 	FAILE = 0,	/*失败*/
 	OK = 1,		/*成功*/	
 	ERROR = -1	/*错误*/
 
-}SATUES;
+}STATUS;
 
 #endif
