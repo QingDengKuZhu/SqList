@@ -47,7 +47,19 @@ int main(void)
 			
 			getchar();
 			break;
+		case 3:			/*删除结点*/
+			pos = InputPos("删除的结点位置是:");
+			if (OK == DeleteList(&L, pos, &e))
+			{
+				printf("删除成功,删除的元素是%d!\n", e);
+			}
+			else
+			{
+				printf("删除失败!\n");
+			}
 
+			getchar();
+			break;
 		default:
 			printf("请重新选择!\n");
 			
