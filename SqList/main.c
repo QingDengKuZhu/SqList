@@ -60,6 +60,12 @@ int main(void)
 
 			getchar();
 			break;
+
+		case 4:			/*输出表的长度*/
+			printf("线性表长度: %d \n", ListLength(&L));
+			
+			getchar();
+			break;
 		default:
 			printf("请重新选择!\n");
 			
