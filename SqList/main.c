@@ -78,6 +78,23 @@ int main(void)
 			e =InputValue("要查找的数值为:");
 			printf("要查找的元素在链表的第%d位!(第0位表示不存在)\n", LocateElem(&L, e));
 
+			getchar();
+			break;
+
+		case 7:			/*返回特定位序结点*/
+			pos = InputPos("获取位置为:");
+			if (OK == GetList(&L, pos, &e))
+			{
+				printf("该结点为:%d\n", e);
+			}
+			else
+			{
+				printf("不存在!\n");
+			}
+
+			getchar();	
+			break;
+
 		default:
 			printf("请重新选择!\n");
 			
