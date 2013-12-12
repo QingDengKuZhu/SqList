@@ -95,6 +95,19 @@ int main(void)
 			getchar();	
 			break;
 
+		case 8:
+			if (ListEmpty(&L) == TRUE)
+			{
+				printf("表为空!\n");
+			}
+			else
+			{
+				printf("表非空!\n");
+			}
+
+			getchar();	
+			break;
+
 		default:
 			printf("请重新选择!\n");
 			
