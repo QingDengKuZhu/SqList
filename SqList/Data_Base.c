@@ -34,11 +34,11 @@ size_t LocateElem(PSQLIST pL, int e)
 {
 	size_t pL_length = ListLength(pL);
 	size_t i;
-	int *p = NULL;
+	int v;	/*存放结点数值以便与e做比较*/
 	for (i=1; i<=pL_length; ++i)
 	{
-		GetList(pL, i, p);/* 函数一定返回OK */
-		if (*p == e)
+		GetList(pL, i, &v);/* 函数一定返回OK */
+		if (v == e)
 		{
 			return i;
 		}
