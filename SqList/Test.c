@@ -29,7 +29,7 @@ void Menu(void)
 	gotoxy(8, 10);
 	cprintf("| 3.删除结点                     4.输出表长                  |\n");
 	gotoxy(8, 11);
-	cprintf("| 5.清空整表                     6.判断结点是否存在特定结点  |\n");
+	cprintf("| 5.清空整表                     6.判断链表是否存在特定结点  |\n");
 	gotoxy(8, 12);
 	cprintf("| 7.返回特定位序结点             8.判断表是否为空            |\n");
 	gotoxy(8, 13);
