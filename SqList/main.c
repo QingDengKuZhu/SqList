@@ -107,6 +107,13 @@ int main(void)
 
 			getchar();	
 			break;
+		
+		case 9:
+			DestroyList(&L);
+			printf("表已删除!\n");
+
+			getchar();	
+			break;
 
 		default:
 			printf("请重新选择!\n");
