@@ -66,6 +66,14 @@ int main(void)
 			
 			getchar();
 			break;
+
+		case 5:			/*清空表*/
+			ClearList(&L);
+			printf("该表已经清空!\n");
+			
+			getchar();
+			break;
+
 		default:
 			printf("请重新选择!\n");
 			
