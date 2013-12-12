@@ -74,6 +74,10 @@ int main(void)
 			getchar();
 			break;
 
+		case 6:			/*判断链表是否存在特定结点*/
+			e =InputValue("要查找的数值为:");
+			printf("要查找的元素在链表的第%d位!(第0位表示不存在)\n", LocateElem(&L, e));
+
 		default:
 			printf("请重新选择!\n");
 			
