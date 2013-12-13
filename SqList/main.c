@@ -6,6 +6,8 @@
 #include "Data.h"
 #include "Data_Base.h"
 #include "Test.h"
+#include <time.h> /*随机数*/
+#include "Data_Expand.h"
 
 int main(void)
 {
@@ -119,6 +121,27 @@ int main(void)
 
 			getchar();	
 			break;
+		
+		case 10:
+			{
+				SQLIST La;
+				size_t i = 0;
+				InitList(&La);
+				srand((int)time(NULL));
+				for (i=1; i<=10; ++i)
+				{
+					InsertList(&La, i, rand()%15);
+				}
+				printf("带求并集的表为:");
+				TraveList(&La);
+				UnionList(&L, &La);
+
+				DestroyList(&La);/*避免内存泄漏*/
+				printf("操作完成!\n");
+
+				getchar();
+				break;
+			}
 
 		default:
 			printf("请重新选择!\n");
