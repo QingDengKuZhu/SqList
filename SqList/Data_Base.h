@@ -25,10 +25,10 @@ BOOL ListEmpty(PSQLIST pL);
 /*返回顺序线性表的长度*/
 size_t ListLength(PSQLIST pL);
 
-/*获取顺序线性表中第pos个元素.若操作成功,函数返回OK,*e保存满足条件的结点的值;若操作失败,函数返回FAILE,*e为垃圾值.*/获取顺序线性表中第pos个元素.若操作成功,函数返回OK,*e保存满足条件的结点的值;若操作失败,函数返回FAILE,*e为垃圾值.
+/*获取顺序线性表中第pos个元素.若操作成功,函数返回OK,*e保存满足条件的结点的值;若操作失败,函数返回FAILE,*e为垃圾值.*/
 STATUS GetList(PSQLIST pL, size_t pos, int *e);
 
-/*返回顺序线性表中第一个与e相等的元素的位序(从1开始).若成功函数返回相应的位序;否者返回0*/.
+/*返回顺序线性表中第一个与e相等的元素的位序(从1开始).若成功函数返回相应的位序;否者返回0*/
 size_t LocateElem(PSQLIST pL, int e);
 
 /*在顺序线性表中第pos个位置之前插入新的数据元素e(1 <= pos <= ListLength(pL)+1).若成功,函数返回OK;否者返回FAILE.*/
