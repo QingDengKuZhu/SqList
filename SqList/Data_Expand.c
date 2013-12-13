@@ -19,7 +19,7 @@ STATUS PriorELem(PSQLIST pL, int v, int *pre_e)
 STATUS NextELem(PSQLIST pL, int v, int *next_e)
 {
 	size_t pos = LocateElem(pL, v);
-	if (pos!=0 && pos!=ListLength(pL))/*如果存在并且不为第一个结点*/
+	if (pos!=0 && pos!=ListLength(pL))/*如果存在并且不为最后个结点*/
 	{
 		GetList(pL, pos+1, next_e);
 		return OK;
@@ -43,7 +43,7 @@ void UnionList(PSQLIST pLa, PSQLIST pLb)
 		GetList(pLb, i, &v);
 		if (0 == LocateElem(pLa, v) )/*比较是否在pLa中*/
 		{
-			InsertList(pLa, ListLength(pLa), v);/*若不在,将数据插入表尾*/
+			InsertList(pLa, ListLength(pLa)+1, v);/*若不在,将数据插入表尾*/
 		}
 	}
 }
