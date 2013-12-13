@@ -15,9 +15,14 @@ int main(void)
 	
 	SQLIST L;
 	InitList(&L);
-	
+
 	while (1)	/*while_@1*/
 	{
+		if (!L.elem)
+		{
+			printf("表不存在!\n");
+			break;
+		}
 		system("cls");
 		Menu();
 
