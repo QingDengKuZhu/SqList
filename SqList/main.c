@@ -144,6 +144,21 @@ int main(void)
 				break;
 			}
 
+		case 11:		/*求前驱结点*/
+			v = InputValue("寻找哪个元素的前驱结点: ");
+			
+			if (OK == PriorELem(&L, v , &e))
+			{
+				printf("前驱结点元素为: %d", e);
+			}
+			else
+			{
+				printf("未找到!\n");
+			}
+
+			getchar();
+			break;
+
 		default:
 			printf("请重新选择!\n");
 			
