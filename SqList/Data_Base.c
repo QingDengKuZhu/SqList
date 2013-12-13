@@ -37,7 +37,7 @@ size_t LocateElem(PSQLIST pL, int v)
 	int e;	/*存放结点数值以便与v做比较*/
 	for (i=1; i<=pL_length; ++i)
 	{
-		GetList(pL, i, &e);/* 函数一定返回OK */
+		GetElem(pL, i, &e);/* 函数一定返回OK */
 		if (v == e)
 		{
 			return i;
@@ -150,7 +150,7 @@ void ClearList(PSQLIST pL)
 }
 
 
-STATUS GetList(PSQLIST pL, size_t pos, int *e)
+STATUS GetElem(PSQLIST pL, size_t pos, int *e)
 {
 	if (pos<1 || pos>ListLength(pL))
 	{
@@ -168,7 +168,7 @@ void TraveList(PSQLIST pL)
 {
 	size_t i = 1;
 	int e;
-	while (OK == GetList(pL, i, &e))
+	while (OK == GetElem(pL, i, &e))
 	{
 		printf("%d ", e);
 		++i;

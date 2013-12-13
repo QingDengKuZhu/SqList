@@ -91,7 +91,7 @@ int main(void)
 
 		case 7:			/*返回特定位序结点*/
 			pos = InputPos("获取位置为:");
-			if (OK == GetList(&L, pos, &e))
+			if (OK == GetElem(&L, pos, &e))
 			{
 				printf("该结点为:%d\n", e);
 			}
