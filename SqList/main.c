@@ -13,7 +13,8 @@ int main(void)
 {
 	int select;		/*保存选择变量*/
 	size_t pos;		/*位序*/
-	int e;			/*结点的值*/
+	int e;			/*保存从函数返回的结点的值*/
+	int v;			/*保存传递给函数的结点的值*/
 	
 	SQLIST L;
 	InitList(&L);
@@ -82,8 +83,8 @@ int main(void)
 			break;
 
 		case 6:			/*判断链表是否存在特定结点*/
-			e =InputValue("要查找的数值为:");
-			printf("要查找的元素在链表的第%d位!(第0位表示不存在)\n", LocateElem(&L, e));
+			v =InputValue("要查找的数值为:");
+			printf("要查找的元素在链表的第%d位!(第0位表示不存在)\n", LocateElem(&L, v));
 
 			getchar();
 			break;

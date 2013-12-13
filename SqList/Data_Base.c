@@ -30,14 +30,14 @@ void DestroyList(PSQLIST pL)
 }
 
 
-size_t LocateElem(PSQLIST pL, int e)
+size_t LocateElem(PSQLIST pL, int v)
 {
 	size_t pL_length = ListLength(pL);
 	size_t i;
-	int v;	/*存放结点数值以便与e做比较*/
+	int e;	/*存放结点数值以便与v做比较*/
 	for (i=1; i<=pL_length; ++i)
 	{
-		GetList(pL, i, &v);/* 函数一定返回OK */
+		GetList(pL, i, &e);/* 函数一定返回OK */
 		if (v == e)
 		{
 			return i;
@@ -91,7 +91,7 @@ STATUS DeleteList(PSQLIST pL, size_t pos, int *e)
 }
 
 
-STATUS InsertList(PSQLIST pL, size_t pos, int e)
+STATUS InsertList(PSQLIST pL, size_t pos, int v)
 {
 	int *pnewbase = NULL;
 	size_t j = 0;
@@ -120,7 +120,7 @@ STATUS InsertList(PSQLIST pL, size_t pos, int e)
 	/*插入元素*/
 	if (TRUE == ListEmpty(pL))
 	{
-		pL->elem[pos-1] = e;
+		pL->elem[pos-1] = v;
 	}
 	else
 	{	/*注意,此循环无法停止,因为j是size_t类型,无法达到循环的终止条件(0-1!=-1)
@@ -134,7 +134,7 @@ STATUS InsertList(PSQLIST pL, size_t pos, int e)
 			pL->elem[j]  = pL->elem[j-1];
 		}
 
-		pL->elem[pos-1] = e;
+		pL->elem[pos-1] = v;
 	}
 	++(pL->length);
 	
