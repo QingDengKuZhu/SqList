@@ -103,7 +103,7 @@ int main(void)
 			getchar();	
 			break;
 
-		case 8:
+		case 8:			/*判断链表*/
 			if (ListEmpty(&L) == TRUE)
 			{
 				printf("表为空!\n");
@@ -116,14 +116,14 @@ int main(void)
 			getchar();	
 			break;
 		
-		case 9:
+		case 9:			/*销毁整表*/
 			DestroyList(&L);
 			printf("表已删除!\n");
 
 			getchar();	
 			break;
 		
-		case 10:
+		case 10:		/*合并链表*/
 			{
 				SQLIST La;
 				size_t i = 0;
@@ -133,7 +133,7 @@ int main(void)
 				{
 					InsertList(&La, i, rand()%15);
 				}
-				printf("带求并集的表为:");
+				printf("待求并集的表为: ");
 				TraveList(&La);
 				UnionList(&L, &La);
 
