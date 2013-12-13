@@ -16,6 +16,8 @@ STATUS PriorELem(PSQLIST pL, int v, int *pre_e)
 	}
 
 }
+
+
 STATUS NextELem(PSQLIST pL, int v, int *next_e)
 {
 	size_t pos = LocateElem(pL, v);
