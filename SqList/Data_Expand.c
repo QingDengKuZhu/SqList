@@ -19,7 +19,7 @@ STATUS PriorELem(PSQLIST pL, int v, int *pre_e)
 STATUS NextELem(PSQLIST pL, int v, int *next_e)
 {
 	size_t pos = LocateElem(pL, v);
-	if (pos!=0 && pos!=ListLength(pL))/*如果存在并且不为最后个结点*/
+	if (pos!=0 && pos!=ListLength(pL))/*如果存在并且不为最后一个结点*/
 	{
 		GetList(pL, pos+1, next_e);
 		return OK;
