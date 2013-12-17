@@ -37,7 +37,7 @@ STATUS InsertList(PSQLIST pL, size_t pos, int e);
 /*删除顺序线性表中第pos个元素.若成功删除,函数返回OK,*e保存被删除元素的值;否者函数返回FAILE,*e为垃圾值.*/
 STATUS DeleteList(PSQLIST pL, size_t pos, int *e);
 
-/*遍输出顺序线性表*/
+/*遍历输出顺序线性表*/
 void TraveList(PSQLIST pL);
 
 #endif
