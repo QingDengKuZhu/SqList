@@ -40,7 +40,7 @@ void UnionList(PSQLIST pLa, PSQLIST pLb)
 {
 	size_t i;
 	size_t pos = ListLength(pLb);
-	const Elem v;
+	Elem v;
 
 	for (i=1; i<=pos; ++i)
 	{
