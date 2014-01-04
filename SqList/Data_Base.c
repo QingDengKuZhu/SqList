@@ -4,7 +4,7 @@
 
 void InitList(PSQLIST pL)
 {
-	pL->elem = (int*)malloc(sizeof(int) * LIST_INIT_SIZE);
+	pL->elem = (Elem*)malloc(sizeof(Elem) * LIST_INIT_SIZE);
 	if (!pL->elem)
 	{
 		printf("在InitList函数中,动态内存分配失败!\n");
@@ -30,11 +30,11 @@ void DestroyList(PSQLIST pL)
 }
 
 
-size_t LocateElem(PSQLIST pL, const int v)
+size_t LocateElem(PSQLIST pL, const Elem v)
 {
 	size_t pL_length = ListLength(pL);
 	size_t i;
-	int e;	/*存放结点数值以便与v做比较*/
+	Elem e;	/*存放结点数值以便与v做比较*/
 	for (i=1; i<=pL_length; ++i)
 	{
 		GetElem(pL, i, &e);/* 函数一定返回OK */
@@ -68,7 +68,7 @@ BOOL ListEmpty(PSQLIST pL)
 
 
 
-STATUS DeleteList(PSQLIST pL, const size_t pos, int *e)
+STATUS DeleteList(PSQLIST pL, const size_t pos, Elem *e)
 {
 	size_t pL_length = ListLength(pL);
 	size_t cur = pos;
@@ -92,9 +92,9 @@ STATUS DeleteList(PSQLIST pL, const size_t pos, int *e)
 }
 
 
-STATUS InsertList(PSQLIST pL, const size_t pos, const int v)
+STATUS InsertList(PSQLIST pL, const size_t pos, const Elem v)
 {
-	int *pnewbase = NULL;
+	Elem *pnewbase = NULL;
 	size_t j = 0;
 	size_t pL_length = ListLength(pL);
 	
@@ -107,7 +107,7 @@ STATUS InsertList(PSQLIST pL, const size_t pos, const int v)
 	/*若当前线性表已满,则不能再插入元素*/
 	if (pL_length >= pL->Listsize)
 	{
-		pnewbase = (int *)realloc(pL->elem, (pL_length+LIST_INCREMENT)*sizeof(int));
+		pnewbase = (Elem *)realloc(pL->elem, (pL_length+LIST_INCREMENT)*sizeof(Elem));
 		if (!pnewbase)
 		{
 			printf("在InitList函数中,动态内存分配错误!\n");
@@ -151,7 +151,7 @@ void ClearList(PSQLIST pL)
 }
 
 
-STATUS GetElem(PSQLIST pL, const size_t pos, int *e)
+STATUS GetElem(PSQLIST pL, const size_t pos, Elem *e)
 {
 	if (pos<1 || pos>ListLength(pL))
 	{
@@ -168,7 +168,7 @@ STATUS GetElem(PSQLIST pL, const size_t pos, int *e)
 void TraveList(PSQLIST pL)
 {
 	size_t i = 1;
-	int e;
+	Elem e;
 	while (OK == GetElem(pL, i, &e))
 	{
 		printf("%d ", e);
