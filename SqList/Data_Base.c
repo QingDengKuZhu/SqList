@@ -30,7 +30,7 @@ void DestroyList(PSQLIST pL)
 }
 
 
-size_t LocateElem(PSQLIST pL, int v)
+size_t LocateElem(PSQLIST pL, const int v)
 {
 	size_t pL_length = ListLength(pL);
 	size_t i;
@@ -68,22 +68,23 @@ BOOL ListEmpty(PSQLIST pL)
 
 
 
-STATUS DeleteList(PSQLIST pL, size_t pos, int *e)
+STATUS DeleteList(PSQLIST pL, const size_t pos, int *e)
 {
 	size_t pL_length = ListLength(pL);
+	size_t cur = pos;
 	
 	/*判断删除的位置是否合理*/
-	if (pos<0 || pos>pL_length)
+	if (cur<0 || cur>pL_length)
 	{
 		return FAILE;
 	}
 
-	*e = pL->elem[pos-1];
+	*e = pL->elem[cur-1];
 
 	while (pos < pL_length)
 	{
 		pL->elem[pos-1] = pL->elem[pos];
-		++pos;
+		++cur;
 	}
 
 	--(pL->length);
@@ -91,7 +92,7 @@ STATUS DeleteList(PSQLIST pL, size_t pos, int *e)
 }
 
 
-STATUS InsertList(PSQLIST pL, size_t pos, int v)
+STATUS InsertList(PSQLIST pL, const size_t pos, const int v)
 {
 	int *pnewbase = NULL;
 	size_t j = 0;
@@ -150,7 +151,7 @@ void ClearList(PSQLIST pL)
 }
 
 
-STATUS GetElem(PSQLIST pL, size_t pos, int *e)
+STATUS GetElem(PSQLIST pL, const size_t pos, int *e)
 {
 	if (pos<1 || pos>ListLength(pL))
 	{
