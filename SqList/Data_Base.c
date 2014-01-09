@@ -81,9 +81,9 @@ STATUS DeleteList(PSQLIST pL, const size_t pos, Elem *e)
 
 	*e = pL->elem[cur-1];
 
-	while (pos < pL_length)
+	while (cur < pL_length)
 	{
-		pL->elem[pos-1] = pL->elem[pos];
+		pL->elem[cur-1] = pL->elem[cur];
 		++cur;
 	}
 
