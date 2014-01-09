@@ -15,9 +15,18 @@ int main(void)
 	size_t pos;		/*位序*/
 	Elem e;			/*保存从函数返回的结点的值*/
 	Elem v;			/*保存传递给函数的结点的值*/
-	
+	int n = 1;
+
 	SQLIST L;
 	InitList(&L);
+
+	srand((int)time(NULL));
+	while (n <= 10)
+	{
+		
+		InsertList(&L, n, rand()%20);
+		++n;
+	}
 
 	while (1)	/*while_@1*/
 	{
