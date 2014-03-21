@@ -13,7 +13,7 @@ STATUS PriorELem(const SQLIST *pL, const Elem v, Elem *pre_e)
 	}
 	else
 	{
-		return FALSE;
+		return FAILE;
 	}
 
 }
@@ -30,7 +30,7 @@ STATUS NextELem(const SQLIST *pL, const Elem v, Elem *next_e)
 	}
 	else
 	{
-		return FALSE;
+		return FAILE;
 	}
 }
 
