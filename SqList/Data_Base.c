@@ -2,7 +2,7 @@
 #include "Main_First.h"
 #include "Data_Base.h"
 
-void InitList(PSQLIST pL)
+void InitList(SQLIST *pL)
 {
 	pL->elem = (Elem*)malloc(sizeof(Elem) * LIST_INIT_SIZE);
 	if (!pL->elem)
@@ -18,7 +18,7 @@ void InitList(PSQLIST pL)
 }
 
 
-void DestroyList(PSQLIST pL)
+void DestroyList(SQLIST *pL)
 {
 	free(pL->elem);
 	pL->elem = NULL;
@@ -30,7 +30,7 @@ void DestroyList(PSQLIST pL)
 }
 
 
-size_t LocateElem(PSQLIST pL, const Elem v)
+size_t LocateElem(const SQLIST *pL, const Elem v)
 {
 	size_t pL_length = ListLength(pL);
 	size_t i;
@@ -48,13 +48,13 @@ size_t LocateElem(PSQLIST pL, const Elem v)
 }
 
 
-size_t ListLength(PSQLIST pL)
+size_t ListLength(const SQLIST *pL)
 {
 	return pL->length;
 }
 
 
-BOOL ListEmpty(PSQLIST pL)
+BOOL ListEmpty(const SQLIST *pL)
 {
 	if (0 == ListLength(pL))
 	{
@@ -68,7 +68,7 @@ BOOL ListEmpty(PSQLIST pL)
 
 
 
-STATUS DeleteList(PSQLIST pL, const size_t pos, Elem *e)
+STATUS DeleteList(SQLIST *pL, const size_t pos, Elem *e)
 {
 	size_t pL_length = ListLength(pL);
 	size_t cur = pos;
@@ -92,7 +92,7 @@ STATUS DeleteList(PSQLIST pL, const size_t pos, Elem *e)
 }
 
 
-STATUS InsertList(PSQLIST pL, const size_t pos, const Elem v)
+STATUS InsertList(SQLIST *pL, const size_t pos, const Elem v)
 {
 	Elem *pnewbase = NULL;
 	size_t j = 0;
@@ -143,7 +143,7 @@ STATUS InsertList(PSQLIST pL, const size_t pos, const Elem v)
 }
 
 
-void ClearList(PSQLIST pL)
+void ClearList(SQLIST * pL)
 {
 	pL->length = 0;
 
@@ -151,7 +151,7 @@ void ClearList(PSQLIST pL)
 }
 
 
-STATUS GetElem(PSQLIST pL, const size_t pos, Elem *e)
+STATUS GetElem(const SQLIST *pL, const size_t pos, Elem *e)
 {
 	if (pos<1 || pos>ListLength(pL))
 	{
@@ -165,7 +165,7 @@ STATUS GetElem(PSQLIST pL, const size_t pos, Elem *e)
 }
 
 
-void TraveList(PSQLIST pL)
+void TraveList(const SQLIST *pL)
 {
 	size_t i = 1;
 	Elem e;

@@ -17,7 +17,6 @@ typedef struct SqList
 	size_t length;//当顺序线性表的表长
 	size_t Listsize;//当前顺序线性表允许的的最大长度
 
-}SQLIST,*PSQLIST;
-
+}SQLIST;
 
 #endif

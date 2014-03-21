@@ -2,7 +2,7 @@
 #include "Main_First.h"
 #include "Data_Base.h"
 
-STATUS PriorELem(PSQLIST pL, const Elem v, Elem *pre_e)
+STATUS PriorELem(const SQLIST *pL, const Elem v, Elem *pre_e)
 {
 	size_t pos = LocateElem(pL, v);
 
@@ -19,7 +19,7 @@ STATUS PriorELem(PSQLIST pL, const Elem v, Elem *pre_e)
 }
 
 
-STATUS NextELem(PSQLIST pL, const Elem v, Elem *next_e)
+STATUS NextELem(const SQLIST *pL, const Elem v, Elem *next_e)
 {
 	size_t pos = LocateElem(pL, v);
 
@@ -36,7 +36,7 @@ STATUS NextELem(PSQLIST pL, const Elem v, Elem *next_e)
 
 
 
-void UnionList(PSQLIST pLa, PSQLIST pLb)
+void UnionList(SQLIST *pLa, const SQLIST *pLb)
 {
 	size_t i;
 	size_t pos = ListLength(pLb);
