@@ -7,7 +7,7 @@
 #include "Main_First.h"
 #include "Data.h"
 /*
-pL为指向顺序线性表的指针,且pL不为NULL.
+pL为指向顺序线性表的指针,且pL不为NULL,pL->Elem不为NULL.
 */
 
 /*构造一个空的顺序线性表.*/
