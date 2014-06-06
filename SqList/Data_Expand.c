@@ -50,4 +50,6 @@ void UnionList(SQLIST *pLa, const SQLIST *pLb)
 			InsertList(pLa, ListLength(pLa)+1, v);/*若不在,将数据插入表尾*/
 		}
 	}
+
+	return;
 }
