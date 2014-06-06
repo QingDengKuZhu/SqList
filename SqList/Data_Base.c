@@ -99,7 +99,7 @@ STATUS InsertList(SQLIST *pL, const size_t pos, const Elem v)
 	size_t pL_length = ListLength(pL);
 	
 	/*判断插入点是否存在*/
-	if (pos<1 || pos>pL_length+1)
+	if (!pL->elem || pos<1 || pos>pL_length+1)
 	{
 		return FAILE;
 	}
